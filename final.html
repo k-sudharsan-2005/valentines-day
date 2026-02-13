@@ -9,7 +9,7 @@
 *{
     margin:0;
     padding:0;
-    box-sizing:border-box;
+    box-sizing:border-box;   
     font-family:sans-serif;
 }
 
@@ -44,12 +44,18 @@ body{
     border:6px solid white;
     box-shadow:0 0 40px white;
     margin:20px auto;
-    animation:glow 3s infinite alternate;
+    animation:glow 3s infinite alternate, heartbeat 2s infinite;
 }
 
 @keyframes glow{
     from{box-shadow:0 0 20px white;}
     to{box-shadow:0 0 50px pink;}
+}
+
+@keyframes heartbeat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+    100%{transform:scale(1);}
 }
 
 /* FLOATING SIDE IMAGES */
@@ -59,6 +65,7 @@ body{
     border-radius:20px;
     box-shadow:0 0 25px white;
     transition:0.5s;
+    animation:floatSide 4s ease-in-out infinite alternate;
 }
 
 .left1{top:120px; left:-40px; transform:rotate(-10deg);}
@@ -70,6 +77,11 @@ body{
     transform:scale(1.1);
 }
 
+@keyframes floatSide{
+    from{transform:translateY(0);}
+    to{transform:translateY(-15px);}
+}
+
 /* LOVE LETTER CARD */
 .letter{
     margin-top:40px;
@@ -79,6 +91,12 @@ body{
     border-radius:20px;
     line-height:1.8;
     box-shadow:0 0 30px rgba(255,255,255,0.4);
+    animation:softPulse 3s infinite alternate;
+}
+
+@keyframes softPulse{
+    from{box-shadow:0 0 20px rgba(255,255,255,0.3);}
+    to{box-shadow:0 0 45px rgba(255,255,255,0.6);}
 }
 
 /* MEMORY */
@@ -92,6 +110,12 @@ body{
 
 .memories li{
     margin:20px 0;
+    transition:0.4s;
+}
+
+.memories li:hover{
+    transform:scale(1.05);
+    text-shadow:0 0 10px white;
 }
 
 /* GALLERY GRID */
@@ -120,6 +144,35 @@ body{
     margin-top:50px;
     font-size:22px;
     text-shadow:0 0 20px white;
+    animation:finalGlow 2s infinite alternate;
+}
+
+@keyframes finalGlow{
+    from{text-shadow:0 0 10px white;}
+    to{text-shadow:0 0 30px pink;}
+}
+
+/* FADE-IN SECTIONS */
+.container > *{
+    opacity:0;
+    transform:translateY(40px);
+    animation:fadeUp 1s ease forwards;
+}
+
+.container > *:nth-child(1){animation-delay:0.2s;}
+.container > *:nth-child(2){animation-delay:0.4s;}
+.container > *:nth-child(3){animation-delay:0.6s;}
+.container > *:nth-child(4){animation-delay:0.8s;}
+.container > *:nth-child(5){animation-delay:1s;}
+.container > *:nth-child(6){animation-delay:1.2s;}
+.container > *:nth-child(7){animation-delay:1.4s;}
+.container > *:nth-child(8){animation-delay:1.6s;}
+
+@keyframes fadeUp{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 /* MOBILE RESPONSIVE */
@@ -145,7 +198,6 @@ body{
 
 <div class="container">
 
-    <!-- SIDE IMAGES -->
     <img src="./img 2.jpeg" class="side left1">
     <img src="./img3.jpeg" class="side right1">
     <img src="./img 7.jpeg" class="side left2">
@@ -159,7 +211,7 @@ body{
 
     <div class="letter">
         My Love ❤️,<br><br>
-      No matter where life takes us,
+        No matter where life takes us,
         I just want you by my side 💗<br>
         You are my today,
         my tomorrow,
@@ -172,7 +224,7 @@ body{
     <div class="memories">
         <h2>Our Beautiful Journey 💖</h2><br>
         <ul>
-            <li>🌸 First conversation (anna tomorrow class povingala)</li>
+            <li>🌸 First conversation</li>
             <li>💬 Late night talks</li>
             <li>💞 The way you make me feel special</li>
             <li>🤗 The way you care for me</li>
@@ -186,8 +238,7 @@ body{
         <img src="./img 9.jpeg">
         <img src="./img 8.jpeg">
     </div>
-    
-    
+
     <div class="memories">
         <h2>My Promises To You 💍💖</h2><br>
         <ul>
@@ -201,16 +252,36 @@ body{
     </div>  
 
     <div class="final-text">
-       More Things I Want To Tell You 💌</h2>
         Every time I see you smile, my heart feels full ❤️<br><br>
         You are not just my love,
         you are my comfort, my safe place,
         my happiness and my biggest blessing 💕<br><br>
         No matter what happens,
-        I promise I will always choose you. 
+        I promise I will always choose you.
     </div>
 
 </div>
+
+<script>
+for(let i=0;i<35;i++){
+    let heart=document.createElement("div");
+    heart.innerHTML="💖";
+    heart.style.position="fixed";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.bottom="-20px";
+    heart.style.fontSize=(Math.random()*20+15)+"px";
+    heart.style.animation=`floatHeart ${Math.random()*3+4}s linear infinite`;
+    document.body.appendChild(heart);
+}
+
+let style=document.createElement("style");
+style.innerHTML=`
+@keyframes floatHeart{
+    0%{transform:translateY(0);opacity:1;}
+    100%{transform:translateY(-100vh);opacity:0;}
+}`;
+document.head.appendChild(style);
+</script>
 
 </body>
 </html>
