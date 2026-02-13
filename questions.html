@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Love Questions 💕</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    background:#ff4e50;
+    color:white;
+    font-family:sans-serif;
+    text-align:center;
+    padding:20px;
+}
+
+button{
+    padding:10px 20px;
+    border:none;
+    border-radius:25px;
+    margin:10px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.yes{background:white;color:#ff4e50;}
+.no{background:black;color:white;}
+</style>
+</head>
+
+<body>
+
+<h2 id="question">Do you love me? 💖</h2>
+
+<button class="yes" onclick="next()">YES 😍</button>
+<button class="no" onclick="moveNo(this)">NO 😅</button>
+
+<script>
+
+let questions = [
+"Do you love me? 💖",
+"Am I your favorite person? 😍",
+"Will you stay with me forever? 💍",
+"Do you promise to handle my possesiveness? 😂",
+"Are you ready to marry me? 💕"
+];
+
+let index = 0;
+
+function next(){
+    index++;
+    if(index < questions.length){
+        document.getElementById("question").innerText = questions[index];
+    }else{
+        window.location.href="final.html";
+    }
+}
+
+function moveNo(btn){
+    btn.style.position="absolute";
+    btn.style.top=Math.random()*80+"%";
+    btn.style.left=Math.random()*80+"%";
+}
+
+</script>
+
+</body>
+</html>

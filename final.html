@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Forever 💖</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif;
+}
+
+body{
+    background:linear-gradient(-45deg,#ff0844,#ff4e50,#ff6a88,#ff99ac);
+    background-size:400% 400%;
+    animation:gradient 12s infinite;
+    color:white;
+    text-align:center;
+    overflow-x:hidden;
+}
+
+@keyframes gradient{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:30px 20px;
+    position:relative;
+}
+
+/* HERO IMAGE */
+.hero{
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid white;
+    box-shadow:0 0 40px white;
+    margin:20px auto;
+    animation:glow 3s infinite alternate;
+}
+
+@keyframes glow{
+    from{box-shadow:0 0 20px white;}
+    to{box-shadow:0 0 50px pink;}
+}
+
+/* FLOATING SIDE IMAGES */
+.side{
+    position:absolute;
+    width:180px;
+    border-radius:20px;
+    box-shadow:0 0 25px white;
+    transition:0.5s;
+}
+
+.left1{top:120px; left:-40px; transform:rotate(-10deg);}
+.right1{top:120px; right:-40px; transform:rotate(10deg);}
+.left2{bottom:200px; left:-50px; transform:rotate(8deg);}
+.right2{bottom:200px; right:-50px; transform:rotate(-8deg);}
+
+.side:hover{
+    transform:scale(1.1);
+}
+
+/* LOVE LETTER CARD */
+.letter{
+    margin-top:40px;
+    padding:25px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(10px);
+    border-radius:20px;
+    line-height:1.8;
+    box-shadow:0 0 30px rgba(255,255,255,0.4);
+}
+
+/* MEMORY */
+.memories{
+    margin-top:30px;
+    text-align:center;
+    background:rgba(255,255,255,0.15);
+    padding:20px;
+    border-radius:15px;
+}
+
+.memories li{
+    margin:20px 0;
+}
+
+/* GALLERY GRID */
+.gallery{
+    margin-top:40px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.5s;
+    box-shadow:0 0 20px rgba(255,255,255,0.5);
+}
+
+.gallery img:hover{
+    transform:scale(1.1);
+}
+
+/* FOOTER MESSAGE */
+.final-text{
+    margin-top:50px;
+    font-size:22px;
+    text-shadow:0 0 20px white;
+}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+
+    .side{
+        position:static;
+        width:100%;
+        margin-top:20px;
+        transform:none;
+    }
+
+    .memories{
+        text-align:center;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- SIDE IMAGES -->
+    <img src="./img 2.jpeg" class="side left1">
+    <img src="./img3.jpeg" class="side right1">
+    <img src="./img 7.jpeg" class="side left2">
+    <img src="./img5.jpeg" class="side right2">
+
+    <h1>Happy Valentine's Day swty 💗</h1>
+
+    <img src="./img1.jpeg" class="hero">
+
+    <h2>You said YES 5 times 😍</h2>
+
+    <div class="letter">
+        My Love ❤️,<br><br>
+      No matter where life takes us,
+        I just want you by my side 💗<br>
+        You are my today,
+        my tomorrow,
+        and my forever 💘<br>
+        Forever Yours ❤️<br>
+        Every second with you is special.
+        I promise to stand by your side forever.
+    </div>
+
+    <div class="memories">
+        <h2>Our Beautiful Journey 💖</h2><br>
+        <ul>
+            <li>🌸 First conversation (anna tomorrow class povingala)</li>
+            <li>💬 Late night talks</li>
+            <li>💞 The way you make me feel special</li>
+            <li>🤗 The way you care for me</li>
+            <li>📸 Cute memories together</li>
+            <li>❤️ Falling in love deeper every day</li>
+        </ul>
+    </div>
+
+    <div class="gallery">
+        <img src="./img 6.jpeg">
+        <img src="./img 9.jpeg">
+        <img src="./img 8.jpeg">
+    </div>
+    
+    
+    <div class="memories">
+        <h2>My Promises To You 💍💖</h2><br>
+        <ul>
+            <li>💖 I promise to hold your hand when you’re happy and when you’re tired.</li>
+            <li>💖 I promise to be your safe place whenever the world feels heavy.</li>
+            <li>💖 I promise to listen to you, understand you, and never ignore your feelings.</li>
+            <li>💖 I promise to celebrate your wins and stand beside you during your struggles.</li>
+            <li>💖 I promise to choose you — every day, in every situation, without hesitation.</li>
+            <li>💖 I promise to love you not just in words, but in actions, forever.</li>
+        </ul>
+    </div>  
+
+    <div class="final-text">
+       More Things I Want To Tell You 💌</h2>
+        Every time I see you smile, my heart feels full ❤️<br><br>
+        You are not just my love,
+        you are my comfort, my safe place,
+        my happiness and my biggest blessing 💕<br><br>
+        No matter what happens,
+        I promise I will always choose you. 
+    </div>
+
+</div>
+
+</body>
+</html>
